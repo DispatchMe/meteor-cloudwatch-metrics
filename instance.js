@@ -24,7 +24,7 @@ CloudWatch.client = function(config) {
 
 
 CloudWatch.client.prototype.track = function(metricName, value, unit) {
-
+  var self = this;
   check(metricName, String);
   check(value, Number);
 
@@ -47,7 +47,9 @@ CloudWatch.client.prototype.track = function(metricName, value, unit) {
     }],
     Namespace: this._config.namespace
   }, function() {
-    console.log(arguments);
+    if (self._config.debug === true) {
+      console.log(arguments);
+    }
   });
 
 };
