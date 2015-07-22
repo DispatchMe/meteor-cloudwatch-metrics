@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dispatch:cloudwatch-metrics',
-  version: '0.0.4',
+  version: '0.0.5',
   // Brief, one-line summary of the package.
   summary: 'Track custom metrics in AWS CloudWatch',
   // URL to the Git repository containing the source code for this package.
@@ -13,7 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.use(['underscore', 'check', 'peerlibrary:aws-sdk@2.0.17_2'], 'server');
   api.versionsFrom('1.1.0.2');
-  api.addFiles(['instance.js', 'autoload.js', 'timer.js', 'utils.js'], 'server');
+  api.addFiles(['instance.js', 'timer.js', 'utils.js', 'autoload.js'], 'server');
   api.export('CloudWatch', 'server');
 });
 
