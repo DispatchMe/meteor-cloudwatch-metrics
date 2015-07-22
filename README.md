@@ -16,7 +16,7 @@ A client will automatically be created for you if you have the following setting
 
 All of the methods on this "default" client will be attached to the exported `CloudWatch` object, so you can call `CloudWatch.track(...)` and it will call `track()` on the default client.
 
-Alternatively, you can create a new client as follows (port is usually 2003):
+Alternatively, you can create a new client as follows:
 
 ```javascript
 var client = new CloudWatch.client(config);
@@ -29,7 +29,7 @@ See the [AWS SDK documentation](http://docs.aws.amazon.com/AWSJavaScriptSDK/late
 
 
 # Function Wrapping
-You can use `client.monitorFunction` to wrap any function and send metrics to `statsd`. If the function throws an error, the count for `{metricName}.error` will be incremented by 1, and if not, the count for `{metricName}.success` will be incremented by 1. For example:
+You can use `client.monitorFunction` to wrap any function and send metrics to CloudWatch. If the function throws an error, the count for `{metricName}.error` will be incremented by 1, and if not, the count for `{metricName}.success` will be incremented by 1. For example:
 
 ```javascript
 Meteor.methods({
