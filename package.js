@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dispatch:cloudwatch-metrics',
-  version: '0.0.3',
+  version: '0.0.4',
   // Brief, one-line summary of the package.
   summary: 'Track custom metrics in AWS CloudWatch',
   // URL to the Git repository containing the source code for this package.
