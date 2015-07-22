@@ -3,6 +3,16 @@
 CloudWatch = {};
 
 CloudWatch.client = function(config) {
+  // Add aws creds from env if not provided
+  if (!config.accessKeyId && process.env.AWS_ACCESS_KEY_ID) {
+    config.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+  }
+
+  if (!config.secretAccessKey && process.env.AWS_SECRET_ACCESS_KEY) {
+    config.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+  }
+
+
   check(config, {
     accessKeyId: String,
     secretAccessKey: String,

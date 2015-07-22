@@ -14,6 +14,8 @@ A client will automatically be created for you if you have the following setting
 }
 ```
 
+Because it's a bad idea to check your AWS creds into version control, you can also specify `accessKeyId` and `secretAccessKey` via the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables, respectively.
+
 All of the methods on this "default" client will be attached to the exported `CloudWatch` object, so you can call `CloudWatch.track(...)` and it will call `track()` on the default client.
 
 Alternatively, you can create a new client as follows:
