@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.use(['underscore', 'check', 'peerlibrary:aws-sdk'], 'server');
+  api.use(['underscore', 'check', 'peerlibrary:aws-sdk@2.0.17_2'], 'server');
   api.versionsFrom('1.1.0.2');
   api.addFiles(['instance.js', 'autoload.js', 'timer.js', 'utils.js'], 'server');
   api.export('CloudWatch', 'server');
